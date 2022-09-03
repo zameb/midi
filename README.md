@@ -1,5 +1,5 @@
 # midi
-I'll redo some midi work from some years ago, when Turbo Pascal and MIDI (standard for music digitalization) were a thing.
+I'll redo some of my work from some years ago, when Turbo Pascal and MIDI (standard for a music digitalization standard) were a thing.
 
 This time I'll code using C# and the Visual Studio ecosystem.
 
@@ -18,3 +18,5 @@ Some goals are:
 - Put it all together in a fantastic user interface with the most awesome user experience.
 
 Ok. I know this is a lot and there are already awesome products like "Band in a Box (BiaB)". But, for some reason, I feel like BiaB first objective is to produce quality output, which is really a very good thing, but the UX and the experimental side for real musicians, is not having enough support in the software industry and this is my effort to fill this gap.
+
+In this effort, I'll try to always apply best practices and re-use and reference existing awesome work. 
