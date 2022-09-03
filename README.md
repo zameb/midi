@@ -1,9 +1,9 @@
 # midi
 I'll redo some of my work from some years ago, when Turbo Pascal and MIDI (standard for a music digitalization standard) were a thing.
 
-This time I'll code using C# and the Visual Studio ecosystem.
+This time I'll code using C# and the DotNet ecosystem.
 
-If you're into MIDI, C# and VisualStudio, you're welcome to contribute.
+If you're into MIDI, C# and DotNet, you're welcome to contribute.
 
 Some goals are:
 
