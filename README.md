@@ -7,8 +7,8 @@ If you're into MIDI, C# and VisualStudio, you're welcome to contribute.
 
 Some goals are:
 
-- Get chord sheets from MIDI files.
-- Get lyrics and chords from KAR or MIDI-Karaoke files.
+- Get chords from MIDI tracks.
+- Get lyrics and chords from KAR or MIDI-Karaoke tracks.
 - Extract "styles" from MIDI tracks.
 - Re-create MIDI files using different track "styles".
 - Being able to collect multiple MIDI files with same soloist track (e.g. Slash) and being able to generate a random solo with the same artist's style with a different chord progression.
