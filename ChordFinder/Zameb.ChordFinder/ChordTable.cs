@@ -23,12 +23,12 @@
         MinorThirteenth = 20, MajorThirteenth = 21,
     }
 
-    public class ChordStructure
+    public class ChordTable
     {
-        public static readonly Dictionary<string, Intervals[]> ChordComponents = new()
+        public static readonly Dictionary<string, Intervals[]> Chords = new()
         {
             { "5", new[] { Intervals.Root, Intervals.PerfectFifth } },
-            { "M", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth } },
+            { "", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth } },
             { "m", new[] { Intervals.Root, Intervals.MinorThird, Intervals.PerfectFifth } },
             { "7", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth, Intervals.MinorSeventh } },
             { "m7", new[] { Intervals.Root, Intervals.MinorThird, Intervals.PerfectFifth, Intervals.MinorSeventh } },
