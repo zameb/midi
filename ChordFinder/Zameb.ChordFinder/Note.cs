@@ -31,7 +31,8 @@ namespace Zameb.ChordFinder
 
         private string GetHash()
         {
-            return $"{Octave:00}{NoteValue:00}";
+            //return $"{Octave:00}{NoteValue:00}";
+            return $"{NoteValue:00}";
         }
     }
 }

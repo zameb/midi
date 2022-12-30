@@ -7,14 +7,14 @@ namespace Zameb.ChordFinder
     {
         private readonly Dictionary<string, NoteEvent> events;
 
-        public IEnumerable<Note> Notes { get; set; }
+        public IEnumerable<Note> Notes { get; set; } = default!;
         public string ChordName { get; set; } = default!;
         public long AbsoluteTime { get; set; }
 
-        public Chord(Dictionary<string, NoteEvent> currentEvents) 
+        public Chord(Dictionary<string, NoteEvent> currentEvents)
         {
             events = currentEvents;
-            Sort();
+            GetNotes();
             ChordName = GetChordName();
             AbsoluteTime = currentEvents.Max(n => n.Value.AbsoluteTime);
         }
@@ -24,7 +24,7 @@ namespace Zameb.ChordFinder
             return $"{ChordName}: [{string.Join(",", Notes.Select(n => n.NoteName))}]";
         }
 
-        private void Sort()
+        private void GetNotes()
         {
             var notes = new List<Note>();
             foreach (var noteEvent in events)
@@ -36,38 +36,51 @@ namespace Zameb.ChordFinder
                     notes.Add(note);
                 }
             }
-            Notes = notes.OrderBy(n => n.Hash);
+            Notes = notes;
         }
 
         private string GetChordName()
         {
-            var root = Notes.First();
-
-            var noteValues = Notes.Select(n => GetTransposedNoteValue(root, n));
-
-            var total = noteValues.Count();
-            var bestMatch = 0;
+            var root = new Note("C1");
             var chordFound = "NA";
+            var totalNotes = Notes.Count();
+            var fullMatch = false;
+            var bestMatch = 0;
+
             foreach (var chord in ChordTable.Chords)
             {
-                var matches = 0;
-                foreach (var noteValue in noteValues)
+                foreach (var currentRoot in Notes)
                 {
-                    if (chord.Value.Contains((Intervals)noteValue))
+                    var matches = 0;
+                    root = currentRoot;
+                    var noteValues = Notes.Select(n => GetTransposedNoteValue(currentRoot, n));
+
+                    foreach (var noteValue in noteValues)
                     {
-                        matches++;
-                        if (matches > bestMatch)
+                        if (chord.Value.Contains((Intervals)noteValue))
                         {
-                            bestMatch = matches;
-                            chordFound = chord.Key;
+                            matches++;
+                            if (matches > bestMatch)
+                            {
+                                bestMatch = matches;
+                                chordFound = chord.Key;
+                                if (matches == totalNotes)
+                                {
+                                    fullMatch = true;
+                                    break;
+                                }
+                            }
                         }
                     }
+                    if (fullMatch) break;
                 }
+                if (fullMatch) break;
             }
+
             return root.NoteName + chordFound;
         }
 
-        private object GetTransposedNoteValue(Note root, Note note)
+        private int GetTransposedNoteValue(Note root, Note note)
         {
             var transposedNoteValue = note.NoteValue - root.NoteValue;
             if (transposedNoteValue < 0)

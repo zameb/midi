@@ -14,8 +14,8 @@
         DiminishedFifth = 6,
         PerfectFifth = 7,
         AugmentedFifth = 8,
-        MajorSixth = 9,
-        MinorSeventh = 10,
+        MajorSixth, Sixth = 9,
+        MinorSeventh, Seventh = 10,
         MajorSeventh = 11,
 
         MinorNinth = 13, MajorNinth = 14,
@@ -34,6 +34,13 @@
             { "m7", new[] { Intervals.Root, Intervals.MinorThird, Intervals.PerfectFifth, Intervals.MinorSeventh } },
             { "M7", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth, Intervals.MajorSeventh } },
             { "sus4", new[] { Intervals.Root, Intervals.Fourth, Intervals.PerfectFifth } },
+            { "6", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth, Intervals.MajorSixth } },
+            { "m6", new[] { Intervals.Root, Intervals.MinorThird, Intervals.PerfectFifth, Intervals.MajorSixth } },
+            { "9", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth, Intervals.MinorSeventh, Intervals.MajorNinth } },
+            { "add9", new[] { Intervals.Root, Intervals.MajorThird, Intervals.PerfectFifth, Intervals.MajorNinth } },
+            { "dim", new[] { Intervals.Root, Intervals.MajorThird, Intervals.DiminishedFifth } },
+            { "aug", new[] { Intervals.Root, Intervals.MajorThird, Intervals.AugmentedFifth } },
+            { "m7b5", new[] { Intervals.Root, Intervals.MinorThird, Intervals.DiminishedFifth, Intervals.MinorSeventh } },
         };
     }
 }

@@ -10,6 +10,7 @@ namespace Zameb.ChordFinder
         {
             var chords = new List<Chord>();
             var currentEvents = new Dictionary<string, NoteEvent>();
+            var previousChordName = "NA";
             foreach (var midiEvent in events)
             {
                 if (midiEvent is NoteEvent midiNote)
@@ -37,9 +38,10 @@ namespace Zameb.ChordFinder
                     midiEvent?.AbsoluteTime % Interval == 0)
                 {
                     var chord = new Chord(currentEvents);
-                    if (chord != null) 
+                    if (chord != null && previousChordName != chord.ChordName) 
                     { 
-                        chords.Add(chord); 
+                        chords.Add(chord);
+                        previousChordName = chord.ChordName;
                     }
                 }
             }
