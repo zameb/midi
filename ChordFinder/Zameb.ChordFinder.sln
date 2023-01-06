@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zameb.ChordFinder.Console", "Zameb.ChordFinder.Console\Zameb.ChordFinder.Console.csproj", "{1647E2C7-2D25-48EA-A36C-52B38CA57913}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zameb.ChordFinder", "Zameb.ChordFinder\Zameb.ChordFinder.csproj", "{606EAECF-9691-49DF-90BC-03E508E0FC7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zameb.ChordFinder", "Zameb.ChordFinder\Zameb.ChordFinder.csproj", "{606EAECF-9691-49DF-90BC-03E508E0FC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zameb.ChordFinderApp", "Zameb.ChordFinderApp\Zameb.ChordFinderApp.csproj", "{3D599237-3C6F-49AD-BFAC-3EE547803BAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{606EAECF-9691-49DF-90BC-03E508E0FC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{606EAECF-9691-49DF-90BC-03E508E0FC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{606EAECF-9691-49DF-90BC-03E508E0FC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D599237-3C6F-49AD-BFAC-3EE547803BAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

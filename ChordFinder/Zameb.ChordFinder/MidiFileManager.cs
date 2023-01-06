@@ -13,8 +13,11 @@ namespace Zameb.ChordFinder
 
         public void GetChords()
         {
-            var chordFinder = new ChordFinder();
-            chordFinder.GetChords(midiFile?.Events[3].ToList());
+            if (midiFile != null)
+            {
+                var chordFinder = new ChordFinder();
+                chordFinder.GetChords(midiFile.Events[3].ToList());
+            }
         }
     }
 }
