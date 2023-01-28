@@ -1,0 +1,11 @@
+     Channels                                           Channels
+     --------             Chords          Channel       --------
+MIDI -------- ChordFinder ------ Composer ------- Mixer -------- MIDI
+     --------                                           --------
+     --------                                           --------
+
+                        Midi File   --> Channel collection
+Channel collection  --> Midi Merger --> Midi Channel
+Midi Channel        --> ChordFinder --> Chord collection
+Chord collection    --> Composer    --> Channel collection
+Channel collection  --> Midi Mixer  --> Midi File

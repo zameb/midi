@@ -5,4 +5,4 @@ var fileName = @"C:\Users\zameb\Documents\Hotel California_excellent (lyrics).mi
 
 var manager = new MidiFileManager();
 manager.Open(fileName);
-manager.GetChords();
+var chords = manager.ReadChords();
