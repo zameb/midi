@@ -11,6 +11,8 @@
             <Button Command="{Binding OpenSongCommand}">Open...</Button>
             <TextBlock Text="{Binding SongName}"/>
         </StackPanel>
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding Tracks}">
+        </ListView>
         <ListView DockPanel.Dock="Left" ItemsSource="{Binding Chords}">
         </ListView>
         <Grid></Grid>

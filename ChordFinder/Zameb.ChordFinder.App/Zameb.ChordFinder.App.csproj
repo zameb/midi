@@ -8,7 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NetEscapades.Configuration.Yaml" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Zameb.ChordFinder\Zameb.ChordFinder.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
