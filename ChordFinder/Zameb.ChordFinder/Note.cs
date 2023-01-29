@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design.Serialization;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Zameb.ChordFinder
 {
@@ -14,14 +13,20 @@ namespace Zameb.ChordFinder
 
         public Note(string note) 
         {
-            var noteParts = Regex.Match(note, "([A-G])([#b]?)(\\d+)");
-            var tone = noteParts.Groups[1].Value;
-            Accident = noteParts.Groups[2].Value;
-            NoteName = tone + Accident;
-            NoteValue = "C D EF G A B".IndexOf(tone);
-            NoteValue += Accident == "#" ? 1 : Accident == "b" ? -1 : 0;
-            Octave = int.Parse(noteParts.Groups[3].Value);
-            Hash = GetHash();
+            try
+            {
+                var noteParts = Regex.Match(note, "([A-G])([#b]?)(\\d+)");
+                var tone = noteParts.Groups[1].Value;
+                Accident = noteParts.Groups[2].Value;
+                NoteName = tone + Accident;
+                NoteValue = "C D EF G A B".IndexOf(tone);
+                NoteValue += Accident == "#" ? 1 : Accident == "b" ? -1 : 0;
+                Octave = int.Parse(noteParts.Groups[3].Value);
+                Hash = GetHash();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public override string ToString()

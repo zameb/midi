@@ -12,12 +12,12 @@ namespace Zameb.ChordFinder
             midiFile = new MidiFile(fileName, false);
         }
 
-        public IEnumerable<Chord>? ReadChords()
+        public IEnumerable<Chord>? ReadChords(int trackNumber)
         {
             if (midiFile != null)
             {
                 var chordFinder = new ChordFinder();
-                return chordFinder.GetChords(midiFile.Events[3].ToList());
+                return chordFinder.GetChords(midiFile.Events[trackNumber].ToList());
             }
             return null;
         }

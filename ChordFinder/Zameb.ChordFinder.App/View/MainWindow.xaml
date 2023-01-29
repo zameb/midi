@@ -11,9 +11,17 @@
             <Button Command="{Binding OpenSongCommand}">Open...</Button>
             <TextBlock Text="{Binding SongName}"/>
         </StackPanel>
-        <ListView DockPanel.Dock="Left" ItemsSource="{Binding Tracks}">
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding TrackInformationList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Command="{Binding Path=DataContext.SelectTrackCommand, RelativeSource={RelativeSource AncestorType=local:MainWindow}}"
+                            CommandParameter="{Binding}">
+                        <TextBlock Text="{Binding TrackInformationText}"/>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <ListView DockPanel.Dock="Left" ItemsSource="{Binding Chords}">
+        <ListView DockPanel.Dock="Left" ItemsSource="{Binding ChordList}">
         </ListView>
         <Grid></Grid>
     </DockPanel>
