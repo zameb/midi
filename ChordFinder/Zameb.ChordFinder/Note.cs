@@ -9,23 +9,24 @@ namespace Zameb.ChordFinder
         public string Accident { get; set; } = default!;
         public int Octave { get; set; }
         public int NoteValue { get; set; }
-        public string Hash { get; set; }
+        public string Representation { get; set; } = default!;
 
         public Note(string note) 
         {
-            try
+            var noteParts = Regex.Match(note, "([A-G])([#b]?)(\\d+)");
+            if (noteParts.Groups.Count > 3)
             {
-                var noteParts = Regex.Match(note, "([A-G])([#b]?)(\\d+)");
                 var tone = noteParts.Groups[1].Value;
                 Accident = noteParts.Groups[2].Value;
                 NoteName = tone + Accident;
                 NoteValue = "C D EF G A B".IndexOf(tone);
                 NoteValue += Accident == "#" ? 1 : Accident == "b" ? -1 : 0;
                 Octave = int.Parse(noteParts.Groups[3].Value);
-                Hash = GetHash();
+                Representation = GetRepresentation();
             }
-            catch (Exception)
+            else
             {
+                Representation = "X";
             }
         }
 
@@ -34,7 +35,7 @@ namespace Zameb.ChordFinder
             return NoteName;
         }
 
-        private string GetHash()
+        private string GetRepresentation()
         {
             //return $"{Octave:00}{NoteValue:00}";
             return $"{NoteValue:00}";

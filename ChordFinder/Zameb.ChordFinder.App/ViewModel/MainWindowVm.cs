@@ -12,7 +12,7 @@ namespace Zameb.ChordFinder.App
 {
     public class MainWindowVm : BaseViewModel
     {
-        private string initialDirectory = string.Empty;
+        private string? initialDirectory = string.Empty;
 
         private readonly MidiFileManager manager;
 

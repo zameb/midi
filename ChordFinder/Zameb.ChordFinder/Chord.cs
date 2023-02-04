@@ -30,8 +30,8 @@ namespace Zameb.ChordFinder
             foreach (var noteEvent in events)
             {
                 var note = new Note(noteEvent.Value.NoteName);
-                var hash = note.Hash;
-                if (!notes.Any(n => n.Hash == hash))
+                var hash = note.Representation;
+                if (!notes.Any(n => n.Representation == hash))
                 {
                     notes.Add(note);
                 }
